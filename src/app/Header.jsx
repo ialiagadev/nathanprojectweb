@@ -7,6 +7,7 @@ import { Raleway } from 'next/font/google'
 import { FaTwitch, FaYoutube, FaInstagram } from 'react-icons/fa'
 import Image from 'next/image'
 import logo from './images/logo.jpg'
+import IlluminatedText from './components/IlluminatedText'
 
 
 
@@ -26,8 +27,8 @@ const FinancialNetwork = () => {
     return Array.from({ length: nodeCount }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.8) * 0.8,
-      vy: (Math.random() - 0.8) * 0.8,
+      vx: (Math.random() - 0.8) * 0.4,
+      vy: (Math.random() - 0.8) * 0.4,
     }))
   }, [])
 
@@ -182,12 +183,14 @@ const HeaderContent = ({ isMobile }) => {
         variants={variants}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
-        <Link 
-          href="/contact" 
-          className="inline-block px-8 py-3 bg-white/20 backdrop-blur-sm rounded-full shadow-md hover:bg-white/30 transition-colors duration-300 text-white text-lg font-medium"
-        >
-          Join the Network
-        </Link>
+       <Link 
+  href="/contact" 
+  className="relative inline-block px-8 py-3 bg-white/20 backdrop-blur-sm rounded-full shadow-md hover:bg-white/30 transition-colors duration-300 text-white text-lg font-medium border border-white/30"
+>
+  MENTORIAS
+  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
+</Link>
+
       </motion.div>
     </div>
   )
