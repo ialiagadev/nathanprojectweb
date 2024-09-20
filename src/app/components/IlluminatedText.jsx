@@ -10,7 +10,7 @@ const raleway = Raleway({
 });
 
 const Word = ({ children, progress }) => {
-  const opacity = useTransform(progress, [0, 0.5, 1], [0, 0.2, 1]);
+  const opacity = useTransform(progress, [0, 0.5, 1], [0.3, 0.6, 1]);
   const textGlow = useTransform(progress, [0, 0.5, 1], [
     '0 0 0px rgba(255, 255, 255, 0)',
     '0 0 10px rgba(255, 255, 255, 0.5)',
