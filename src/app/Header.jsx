@@ -9,8 +9,6 @@ import Image from 'next/image'
 import logo from './images/logo.jpg'
 import IlluminatedText from './components/IlluminatedText'
 
-
-
 const raleway = Raleway({
   subsets: ['latin'],
   weight: ['200', '400', '700'],
@@ -19,7 +17,6 @@ const raleway = Raleway({
 const FinancialNetwork = () => {
   const canvasRef = useRef(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const nodesRef = useRef([])
 
   const createNodes = useCallback((width, height) => {
@@ -36,9 +33,7 @@ const FinancialNetwork = () => {
     ctx.clearRect(0, 0, width, height)
     
     ctx.strokeStyle = 'rgba(255, 165, 0, 0.8)' // Mayor opacidad
-
     ctx.lineWidth = 1.5
-
     const maxDistance = 100
 
     nodesRef.current.forEach((node, i) => {
@@ -69,23 +64,8 @@ const FinancialNetwork = () => {
           ctx.stroke()
         }
       }
-
-      const dx = mousePosition.x - node.x
-      const dy = mousePosition.y - node.y
-      const distance = Math.sqrt(dx * dx + dy * dy)
-
-      if (distance < maxDistance * 2) {
-        ctx.strokeStyle = 'rgba(255, 165, 0, 0.6)'
-        ctx.lineWidth = 1
-        ctx.beginPath()
-        ctx.moveTo(node.x, node.y)
-        ctx.lineTo(mousePosition.x, mousePosition.y)
-        ctx.stroke()
-        ctx.strokeStyle = 'rgba(255, 165, 0, 0.4)'
-        ctx.lineWidth = 0.5
-      }
     })
-  }, [mousePosition])
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -116,15 +96,6 @@ const FinancialNetwork = () => {
       cancelAnimationFrame(animationFrameId)
     }
   }, [createNodes, drawNodes])
-
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY })
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
 
   return <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 }
@@ -209,12 +180,13 @@ const SocialIcons = () => (
     </Link>
   </div>
 )
+
 const LogoComponent = () => {
   return (
     <Link href="/" className="absolute top-4 left-16 flex items-center space-x-2 z-30">
       <div className="relative w-10 h-10 overflow-hidden rounded-full border-2 border-white">
         <Image
-            src={logo}// Ruta desde la carpeta public
+            src={logo} // Ruta desde la carpeta public
             alt="Jordan Coach Logo"
           layout="fill"
           objectFit="cover"
