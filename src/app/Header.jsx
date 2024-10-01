@@ -14,20 +14,20 @@ const raleway = Raleway({
   weight: ['200', '400', '700'],
 })
 
-const FinancialNetwork = () => {
+const FinancialNetwork = ({ isMobile }) => {
   const canvasRef = useRef(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const nodesRef = useRef([])
 
   const createNodes = useCallback((width, height) => {
-    const nodeCount = 150
+    const nodeCount = isMobile ? 50 : 150; // Menos nodos en pantallas pequeñas
     return Array.from({ length: nodeCount }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       vx: (Math.random() - 0.8) * 0.4,
       vy: (Math.random() - 0.8) * 0.4,
     }))
-  }, [])
+  }, [isMobile])
 
   const drawNodes = useCallback((ctx, width, height) => {
     ctx.clearRect(0, 0, width, height)
@@ -161,7 +161,6 @@ const HeaderContent = ({ isMobile }) => {
   MENTORIAS
   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
 </Link>
-
       </motion.div>
     </div>
   )
@@ -209,10 +208,10 @@ export default function FinancialNetworkHeader() {
 
   return (
     <header className={`${raleway.className} relative min-h-screen overflow-hidden bg-gradient-to-b from-orange-700 via-black to-black`}>
-      <FinancialNetwork />
+      <FinancialNetwork isMobile={isMobile} /> {/* Pasa isMobile a FinancialNetwork */}
       <div className="absolute inset-0 bg-black/50 z-10"></div>
-      <SocialIcons/>
-      <LogoComponent/>
+      <SocialIcons />
+      <LogoComponent />
       <div className="relative z-20 flex flex-col justify-between min-h-screen p-4">
         <HeaderContent isMobile={isMobile} />
       </div>
