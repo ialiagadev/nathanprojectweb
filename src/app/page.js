@@ -12,9 +12,7 @@ export default function Home() {
       <section>
      <IlluminatedText/>
       </section>
-      <section id="about">
-       <AboutPage/>
-      </section>
+      
       {/* Más secciones según sea necesario */}
     </div>
   )

@@ -13,7 +13,7 @@ const raleway = Raleway({
 })
 
 const services = [
-  { icon: TrendingUp, title: 'Inversión en Criptoactivos', description: 'Estrategias probadas para navegar en mercados volátiles' },
+  { icon: TrendingUp, title: 'Directos Formativos', description: 'Todas nuestras clases en directo para no perderte nada' },
   { icon: DollarSign, title: 'Análisis Financiero', description: 'Evaluación profunda de oportunidades de inversión' },
   { icon: BookOpen, title: 'Mentoría Personalizada', description: 'Guía experta para alcanzar tus objetivos financieros' },
 ]
