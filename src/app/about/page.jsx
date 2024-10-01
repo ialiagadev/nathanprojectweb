@@ -2,7 +2,7 @@
 
 import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import { TrendingUp, DollarSign, BookOpen, Users, Coffee } from 'lucide-react'
+import { TrendingUp, DollarSign, BookOpen } from 'lucide-react'
 import { Raleway } from 'next/font/google'
 import Component from '../components/partnerscroll'
 import Partnerscroll from '../components/partnerscroll'
@@ -25,25 +25,24 @@ export default function AboutMe() {
     <div className={`${raleway.className} min-h-screen bg-gradient-to-b from-orange-700 via-black to-black text-white p-8 relative overflow-hidden`}>
       <div className="absolute inset-0 bg-black/50 z-0"></div>
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none noise-background"></div>
-      
       <div className="relative z-10 max-w-6xl mx-auto">
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-center"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Experto en Finanzas y Criptoactivos
-        </motion.h1>
+  <motion.h1
+    className={`${raleway.className} text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-center`} // Agregar la clase de Raleway aquí
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    Experto en Finanzas y Criptoactivos
+  </motion.h1>
 
         <div className="grid md:grid-cols-2 gap-8">
           <InfoCard
-            icon={Users}
+            
             title="Mi Trayectoria"
             content="Profesional titulado en financiación de empresas y análisis contable y financiero con más de 6 años de experiencia. Especializado en especulación e inversión, con un enfoque particular en criptoactivos durante los últimos 4 años, manteniendo rentabilidad incluso en tiempos de alta volatilidad."
           />
           <InfoCard
-            icon={Coffee}
+           
             title="Mi Enfoque"
             content="Me dedico a compartir abiertamente mis resultados y estrategias ganadoras a través de mis redes sociales, creando un espacio de confianza y transparencia. Mi objetivo es ofrecer soluciones probadas y rentables que permitan a mis seguidores optimizar sus inversiones y navegar con éxito en el mercado financiero actual."
           />
@@ -99,7 +98,7 @@ const InfoCard = ({ icon: Icon, title, content }) => (
     transition={{ type: "spring", stiffness: 300 }}
   >
     <h2 className="text-2xl sm:text-3xl font-semibold mb-4 flex items-center">
-      <Icon className="mr-2" /> {title}
+     {title}
     </h2>
     <p className="text-base sm:text-lg">{content}</p>
   </motion.div>
