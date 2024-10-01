@@ -9,7 +9,7 @@ import Partnerscroll from '../components/partnerscroll'
 
 const raleway = Raleway({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['200', '400', '700'], 
 })
 
 const services = [
@@ -27,7 +27,7 @@ export default function AboutMe() {
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none noise-background"></div>
       <div className="relative z-10 max-w-6xl mx-auto">
   <motion.h1
-    className={`${raleway.className} text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-center`} // Agregar la clase de Raleway aquí
+    className={`${raleway.className} text-4xl sm:text-5xl md:text-6xl font-extralight mb-8 text-center`} // Usar font-extralight
     initial={{ opacity: 0, y: -50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
