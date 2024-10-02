@@ -49,7 +49,7 @@ const Navbar = () => {
       <nav className="h-12 w-full max-w-[500px] flex items-center justify-between px-4 bg-black/30 rounded-xl border border-white/20 relative overflow-hidden backdrop-blur-md shadow-lg">
         <NavItem href="/" isActive={pathname === '/'}>Home</NavItem>
         <NavItem href="/about" isActive={pathname === '/about'}>Sobre mi</NavItem>
-        <NavItem href="/partnership" isActive={pathname === '/partnership'}>Mentorías</NavItem>
+        <NavItem href="/mentorias" isActive={pathname === '/mentorias'}>Mentorías</NavItem>
       </nav>
     </div>
   )

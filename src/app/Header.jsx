@@ -167,7 +167,7 @@ const HeaderContent = ({ isMobile }) => {
 }
 
 const SocialIcons = () => (
-  <div className="absolute top-4 right-16 flex space-x-4 z-30">
+  <div className="absolute top-4 right-4 md:right-16 flex space-x-4 z-30">
     <Link href="https://www.twitch.tv/jordan_fdx" target="_blank" rel="noopener noreferrer">
       <FaTwitch className="w-6 h-6 text-white hover:text-gray-300 transition-colors" />
     </Link>
@@ -180,21 +180,23 @@ const SocialIcons = () => (
   </div>
 )
 
+
 const LogoComponent = () => {
   return (
-    <Link href="/" className="absolute top-4 left-16 flex items-center space-x-2 z-30">
-      <div className="relative w-10 h-10 overflow-hidden rounded-full border-2 border-white">
+    <Link href="/" className="absolute top-4 left-4 md:left-16 flex items-center space-x-2 z-30">
+      <div className="relative w-8 h-8 md:w-10 md:h-10 overflow-hidden rounded-full border-2 border-white">
         <Image
-            src={logo} // Ruta desde la carpeta public
-            alt="Jordan Coach Logo"
+          src={logo}
+          alt="Jordan Coach Logo"
           layout="fill"
           objectFit="cover"
         />
       </div>
-      <span className="text-white text-lg font-semibold">Jordan Coach</span>
+      <span className="text-white text-sm md:text-lg font-semibold">Jordan Coach</span>
     </Link>
   )
 }
+
 
 export default function FinancialNetworkHeader() {
   const [isMobile, setIsMobile] = useState(false)
