@@ -34,16 +34,25 @@ const PricingCard = ({ title, price, features = [], isPopular }) => (
           </li>
         ))}
       </ul>
-      <button className={`
-        w-full py-3 px-6 rounded-lg font-bold text-lg
-        transition-all duration-300 ease-in-out
-        ${isPopular
-          ? 'bg-orange-500 text-white hover:bg-orange-600'
-          : 'bg-white/10 text-white hover:bg-white/20'}
-        relative overflow-hidden
-      `}>
-        Comenzar ahora
-      </button>
+      <a
+  href="https://forms.gle/kbM5jWuX5dHmseu97"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button
+    className={`
+      w-full py-3 px-6 rounded-lg font-bold text-lg
+      transition-all duration-300 ease-in-out
+      ${isPopular
+        ? 'bg-orange-500 text-white hover:bg-orange-600'
+        : 'bg-white/10 text-white hover:bg-white/20'}
+      relative overflow-hidden
+    `}
+  >
+    Comenzar ahora
+  </button>
+</a>
+
     </div>
   </div>
 );
@@ -54,20 +63,23 @@ const Mentorias = () => {
       title: "Telegram VIP",
       price: 40,
       features: [
-        "2 sesiones de mentoría al mes",
-        "Acceso a recursos básicos",
-        "Soporte por email",
+        "Acceso a mi portafolio personal",
+        "Chivatazos en el sector",
+        "Mis inversiones más arriesgadas",
+        "Análisis con prioridad",
+        "Acceso a recursos",
       ],
       isPopular: false
     },
     {
-      title: "Programa Mentorias",
+      title: "Programa Mentorías",
       price: 380,
       features: [
         
-        "Acceso a todos los recursos",
-        "Soporte prioritario 24/7",
-        "Acceso a comunidad privada",
+        "Sesiones en vivo en grupos reducidos",
+        "Mínimo de dos reuniones privadas individuales",
+        "Acceso al grupo VIP",
+        "Acceso a recursos exclusivos",
       ],
       isPopular: true
     }
@@ -78,14 +90,14 @@ const Mentorias = () => {
       <div className="max-w-7xl mx-auto relative">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22%3E%3Cg fill=%22%23f97316%22 fill-opacity=%220.1%22%3E%3Cpath d=%22M0 0h100v100H0z%22/%3E%3Cpath d=%22M0 0h50v50H0zM50 50h50v50H50z%22/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
         <div className="relative">
-        <h1 className={`text-5xl font-extralight text-center text-white mb-4 ${raleway.className}`}>
-           PROGRAMA DE MENTORÍAS
-        </h1>
-
-          <p className="text-xl text-center text-gray-300 mb-12">
-            Impulsa tu carrera con mentorías personalizadas de expertos en la industria
+          <h1 className={`text-5xl font-extralight text-center text-white mb-6 ${raleway.className} leading-tight`}>
+            PROGRAMA DE MENTORÍAS
+          </h1>
+  
+          <p className="text-xl text-center text-orange-100 mb-12 font-light leading-relaxed max-w-3xl mx-auto">
+            Programa personalizado a tus necesidades, no importa si tienes un nivel principiante o avanzado, este programa se ajusta a las necesidades del usuario.
           </p>
-
+  
           {/* Espacio para el video */}
           <div className="aspect-w-16 aspect-h-9 mb-16 relative overflow-hidden rounded-lg">
             <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-500">
@@ -93,14 +105,14 @@ const Mentorias = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-transparent opacity-20"></div>
           </div>
-
+  
           {/* Tarjetas de precios */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
             {plans.map((plan, index) => (
               <PricingCard key={index} {...plan} />
             ))}
           </div>
-
+  
           {/* Elemento decorativo */}
           <div className="mt-16 text-center">
             <span className="inline-block px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-semibold animate-pulse">

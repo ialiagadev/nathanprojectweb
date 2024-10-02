@@ -145,7 +145,7 @@ const HeaderContent = ({ isMobile }) => {
         variants={variants}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-       decision a decision
+       decisión a decisión
       </motion.p>
 
       <motion.div
@@ -155,7 +155,7 @@ const HeaderContent = ({ isMobile }) => {
         transition={{ duration: 0.5, delay: 0.8 }}
       >
        <Link 
-  href="/contact" 
+  href="/mentorias" 
   className="relative inline-block px-8 py-3 bg-white/20 backdrop-blur-sm rounded-full shadow-md hover:bg-white/30 transition-colors duration-300 text-white text-lg font-medium border border-white/30"
 >
   MENTORIAS

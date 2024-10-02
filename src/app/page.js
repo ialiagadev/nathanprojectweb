@@ -1,7 +1,7 @@
 import Header from "./Header";
-import AboutPage from "./about/page";
 import IlluminatedText from "./components/IlluminatedText";
 import FormularioCorreo from "./components/newsletter";
+import Partnerscroll from "./components/partnerscroll";
 export default function Home() {
   return (
     <div>
@@ -9,11 +9,16 @@ export default function Home() {
         <Header/>
       </section>
       <section>
-     <IlluminatedText/>
+        <IlluminatedText/>
       </section>
-      <section>
-     <FormularioCorreo/>
-      </section>
+      <section className=" bg-black">
+         <FormularioCorreo />
+       </section>
+       
+       <section className="bg-black">
+         <Partnerscroll />
+        </section>
+
       
       {/* Más secciones según sea necesario */}
     </div>

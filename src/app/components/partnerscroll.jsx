@@ -3,17 +3,20 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link' // Importamos Link para los enlaces
 import primext from '../images/primexbt.jpg'
 import blofin from '../images/blofinlogo.jpg'
 
 const partners = [
   { 
     name: "Blofin", 
-    logo: blofin 
+    logo: blofin,
+    url: "https://bit.ly/4dRGijN" // Enlace de Blofin
   },
   { 
     name: "Prime XBT", 
-    logo: primext 
+    logo: primext,
+    url: "https://u.primexbt.com/CryptoTwitch" // Enlace de Prime XBT
   },
 ]
 
@@ -24,16 +27,16 @@ export default function Partnerscroll() {
   useEffect(() => {
     const animateScroll = async () => {
       if (containerRef.current) {
-        const scrollWidth = containerRef.current.scrollWidth / 2 // Dividimos el ancho total del contenedor a la mitad (debido a la duplicación)
+        const scrollWidth = containerRef.current.scrollWidth / 2 // El ancho total dividido a la mitad
 
         await controls.start({
-          x: [0, -scrollWidth], // Animamos el movimiento hasta la mitad del contenedor
+          x: [0, -scrollWidth],
           transition: {
             x: {
-              repeat: Infinity, // Repetimos infinitamente
-              repeatType: "loop", // Usamos el tipo de repetición en bucle
-              duration: 20, // Tiempo total del scroll
-              ease: "linear", // Movimiento lineal sin pausas
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 30, // Aumentamos la duración para un desplazamiento más suave
+              ease: "linear",
             },
           },
         })
@@ -44,9 +47,9 @@ export default function Partnerscroll() {
   }, [controls])
 
   return (
-    <div className="w-full bg-gradient-to-b from-orange-700 via-black to-black text-white p-8 overflow-hidden">
-      <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-center">
-        Powerful Connections
+    <div className="w-full bg-black text-white p-8 overflow-hidden">
+      <h2 className="text-4xl font-bold text-white mb-8 text-center">
+        Nuestros Partners
       </h2>
       <div className="relative w-full h-24 overflow-hidden">
         <motion.div
@@ -55,40 +58,23 @@ export default function Partnerscroll() {
           animate={controls}
           style={{ x: 0 }}
         >
-          {[...partners, ...partners].map((partner, index) => (
+          {[...partners, ...partners, ...partners, ...partners, ...partners, ...partners, ...partners].map((partner, index) => ( // Duplicamos 4 veces
             <div
               key={index}
               className="flex items-center justify-center h-full"
-              style={{ width: '250px' }}
+              style={{ width: '250px', paddingRight: '20px' }} // Añadimos padding
             >
-              <div className="w-48 h-24 relative">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  layout="fill"
-                  objectFit="contain"
-                  className="max-w-full max-h-full"
-                />
-              </div>
-            </div>
-          ))}
-
-          {/* Duplicamos todo el contenido para lograr el efecto continuo */}
-          {[...partners, ...partners].map((partner, index) => (
-            <div
-              key={index + partners.length} // Nos aseguramos de que las keys sean únicas
-              className="flex items-center justify-center h-full"
-              style={{ width: '250px' }}
-            >
-              <div className="w-48 h-24 relative">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  layout="fill"
-                  objectFit="contain"
-                  className="max-w-full max-h-full"
-                />
-              </div>
+              <Link href={partner.url} target="_blank" rel="noopener noreferrer">
+                <div className="w-48 h-24 relative">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    layout="fill"
+                    objectFit="contain"
+                    className="max-w-full max-h-full"
+                  />
+                </div>
+              </Link>
             </div>
           ))}
         </motion.div>
