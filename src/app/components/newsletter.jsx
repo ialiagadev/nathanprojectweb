@@ -36,7 +36,7 @@ const FormularioCorreo = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>
       <div className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-8 text-center">Suscríbete a nuestras novedades</h2>
+          <h2 className="text-4xl font-bold text-white mb-16  text-center">Suscríbete a nuestras novedades</h2>
           <form onSubmit={manejarEnvio} className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
             <div className="w-full md:w-2/3 max-w-2xl">
               <input

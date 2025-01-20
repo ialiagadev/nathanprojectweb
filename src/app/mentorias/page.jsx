@@ -98,13 +98,7 @@ const Mentorias = () => {
             Programa personalizado a tus necesidades, no importa si tienes un nivel principiante o avanzado, este programa se ajusta a las necesidades del usuario.
           </p>
   
-          {/* Espacio para el video */}
-          <div className="aspect-w-16 aspect-h-9 mb-16 relative overflow-hidden rounded-lg">
-            <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-500">
-              Video de presentación (por añadir)
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-transparent opacity-20"></div>
-          </div>
+      
   
           {/* Tarjetas de precios */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
